@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .pink-table {
+            background-color: #ffe4e1; /* Rose pale */
+        }
+        .pink-table th {
+            background-color: #ff99cc; /* Rose plus vif */
+            color: rgb(18, 18, 18);
+        }
+        .pink-table tr:nth-child(even) {
+            background-color: #ffd1dc; /* Lignes roses alternées */
+        }
+    </style>
+</head>
+<body class="container">
+    
+    <h1 class="my-4">All Products</h1>
+
+    <table class="table table-striped pink-table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                
+                <th>Description</th>
+                <th>Categorie</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% crudProduct.forEach(product => { %>
+            <tr>
+                <td><%= product.libelle_produit %></td>
+                
+                <td><%= product.description %></td>
+                <td><%= product.libelle_categorie %></td>
+                <td><%= product.prix %></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
